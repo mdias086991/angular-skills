@@ -1,4 +1,6 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit, Input } from '@angular/core';
+import { DashboardService, ICard } from '../dashboard.service';
 
 @Component({
   selector: 'app-card',
@@ -8,17 +10,21 @@ import { Component, OnInit, Input } from '@angular/core';
 export class CardComponent implements OnInit {
 
   @Input() card;
-  constructor() { }
+  constructor(private dashboardService: DashboardService) { }
 
-  ngOnInit() {
+  ngOnInit() {}
+
+  onLike(card: ICard){
+    this.dashboardService.addLike(card).toPromise().then((el) =>{
+      console.log('funcionou', el)
+    }).catch((e) => {
+      console.log('Der erro =>', e)
+    })
   }
+    
 
-  onLike(card: any){
-    // TODO: incrementar o like, salvar via rest
-  }
-
-  onShare(card: any){
-    // TODO: abrir o link do seu linkedin
+  onShare(){
+    window.open('https://www.linkedin.com/in/matheus-dias-044a971a5/', '_blank')
   }
 
 }

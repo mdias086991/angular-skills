@@ -1,15 +1,22 @@
-<mat-card class="example-card">
-  <mat-card-header>
-    <mat-card-title>{{card.name}}</mat-card-title>
-  </mat-card-header>
-  <img mat-card-image [src]="card.pic" alt="Photo of a Shiba Inu">
-  <mat-card-content>
-    <p>
-      {{card.description}}
-    </p>
-  </mat-card-content>
-  <mat-card-actions>
-    <button mat-button>LIKE {{card.likes}}</button>
-    <button mat-button>SHARE</button>
-  </mat-card-actions>
-</mat-card>
+<div class="container">
+  <div class="card-hexagon">
+    <div class="card-body">
+      <img mat-card-image [src]="card.pic" alt="Photo of a Shiba Inu">
+      <div class="content">
+        <div>
+          <h2>
+            {{card.name}}
+          </h2>
+          <p>
+            {{card.description}}
+          </p>
+          <div class="card-buttons">
+            <button mat-button [class.primary]="card.likes >= 5" [class.gold]="card.likes >= 10" (click)="onLike(card)">LIKE {{card.likes}}</button>
+            <button  mat-button (click)="onShare()">SHARE</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

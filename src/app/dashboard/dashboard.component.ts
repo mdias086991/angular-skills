@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { DashboardService, ICard } from './dashboard.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -8,12 +9,18 @@ import { HttpClient } from '@angular/common/http';
 })
 export class DashboardComponent implements OnInit {
 
-  cards: Array<any>;
+  cards: ICard[] = [];
 
-  constructor(private httpClient: HttpClient) { }
+  constructor(private httpClient: HttpClient, private dashboardService: DashboardService) { }
 
   ngOnInit() {
-    this.httpClient.get('/api/skills').subscribe((ret: Array<any>) => this.cards = ret);
+    this.getElements();
+  }
+
+  getElements(){
+    this.dashboardService.getAll().subscribe((card: ICard[]) => {
+      this.cards = card;
+    })
   }
 
 }
