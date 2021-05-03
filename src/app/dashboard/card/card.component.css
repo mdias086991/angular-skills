@@ -1,5 +1,8 @@
 
 
+  .container .card-hexagon:hover .card-body {
+    font-family: 'Lato', sans-serif;
+  }
   .container .card-hexagon {
     position: relative;
     width: 400px;
@@ -60,7 +63,7 @@
     align-items: center;
     padding: 20px;
     text-align: center;
-    background: linear-gradient(45deg, #03a9f4, rgba(3, 169, 244, .5));
+    background: linear-gradient(45deg, #183153, rgba(3, 169, 244, .5));
     color: #fff;
     transition: .5s;
     opacity: 0;

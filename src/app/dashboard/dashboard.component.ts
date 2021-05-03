@@ -8,7 +8,7 @@ import { DashboardService, ICard } from './dashboard.service';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
-
+  isLoading: boolean = false;
   cards: ICard[] = [];
 
   constructor(private httpClient: HttpClient, private dashboardService: DashboardService) { }
@@ -18,8 +18,10 @@ export class DashboardComponent implements OnInit {
   }
 
   getElements(){
+    this.isLoading = true
     this.dashboardService.getAll().subscribe((card: ICard[]) => {
       this.cards = card;
+      this.isLoading = false;
     })
   }
 
