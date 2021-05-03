@@ -11,8 +11,17 @@
             {{card.description}}
           </p>
           <div class="card-buttons">
-            <button mat-button [class.primary]="card.likes >= 5" [class.gold]="card.likes >= 10" (click)="onLike(card)">LIKE {{card.likes}}</button>
-            <button  mat-button (click)="onShare()">SHARE</button>
+            <div class="like-button" 
+              
+              (click)="onLike(card)">
+              <i class="far fa-thumbs-up"></i>
+              <p 
+                class="card-count-likes"
+                [class.primary]="card.likes >= 5"
+                [class.gold]="card.likes >= 10" >
+                {{card.likes}}</p>
+            </div>
+            <i class="fas fa-share-alt" (click)="onShare()"></i>
           </div>
         </div>
       </div>

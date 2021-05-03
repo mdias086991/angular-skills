@@ -11,8 +11,13 @@
     margin-left: 20px;
     color: #fff;
     text-decoration: none;
-    
+    transition: .3s;
 }
+
+.profile-social-media-link:hover {
+    color: #a8a8a8
+}
+
 .mt-20{
     margin-top: 20px;
 }
@@ -20,11 +25,13 @@
 .profile-content .profile-full-card-header{
     justify-content: space-between;
     width: 100%;
+    flex-wrap: wrap;
 }
 .profile-informations {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
 }
 .profile-image {
     margin-right: 10px;
@@ -38,4 +45,20 @@
 }
 .fab, .fas {
     font-size: 30px;
+    margin-right: 18px;
 }
+
+
+@media (max-width: 620px) {
+    .profile-social-media  {
+        width: 100%;
+        padding: 20px;
+    }
+}   
+
+@media (max-width: 472px) {
+    .profile-informations .profile-name {
+        text-align: center;
+    }
+}
+

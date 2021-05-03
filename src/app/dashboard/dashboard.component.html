@@ -1,11 +1,18 @@
 <app-profile-header></app-profile-header>
 <h3 class="page-title">
-    My Skills
+    {{isLoading == false ? 'MySkills' : 'Loading Skills' }}
 </h3>
 <div class="dash-card-skils" *ngIf="cards && isLoading == false; else templateLoading"> 
     <app-card [card]="card" *ngFor="let card of cards"></app-card>
 </div>
 
 <ng-template #templateLoading>
-    <h1>Carregando</h1>
+    <div class="icons-loaging">
+        <i class="fab fa-angular fa-2x"></i>
+        <i class="fab fa-css3-alt fa-2x"></i>
+        <i class="fab fa-js fa-2x"></i>
+    </div>
+    <div class="loading-spin">
+        <i class="fas fa-spinner fa-2x fa-spin"></i>
+    </div>
 </ng-template>
