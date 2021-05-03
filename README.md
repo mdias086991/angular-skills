@@ -3,11 +3,11 @@
 Projeto em angular 8 para a apresentação de um dashboard com as skills pessoais.
 
 * Tecnologias e ferramentas usadas
-Angular 8
-TypeScript
-CSS
-HTML
-Google Fonts
+Angular 8,
+TypeScript,
+CSS,
+HTML,
+Google Fonts,
 FontAwesome
 
 * Configuração do projeto
